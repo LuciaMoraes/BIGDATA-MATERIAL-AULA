@@ -53,4 +53,7 @@ eixo TEXT NOT NULL,
     DROP TABLE alunos;
     DROP DATABASE pipoquinha
     
-    -- Atividade para avaliar na semana que vem: Criem mais uma tabela que possa ter relação com  'alunos'
+-- Atividade para avaliar na semana que vem: Criem mais uma tabela que possa ter relação com  'alunos'
+-- e 'professores', fazendo pelo menos a construção com 7 atributos e 7 injeções. Não esqueça de 
+-- que todas precisam estar relacionadas.
+
