@@ -10,7 +10,7 @@ genero TEXT NOT NULL
 -- injeção de dados teste
 INSERT INTO alunos VALUES (1, 'Paulo' , 'M');
 INSERT INTO alunos VALUES (2, 'Lucia', 'F');
-matricula
+
 
 -- consultando as inkeções realizadas
 SELECT * FROM alunos WHERE matricula=1
@@ -30,30 +30,29 @@ INSERT INTO professores VALUES (72, 'Maria', 'F');
 -- inserindo uma chave estrangeira ao criar uma tabela
 -- opção 1: a tabela AINDA NÃO FOI CRIADA:
 CREATE TABLE professores (
-matricula_prof INTEGER PRIMARY KEY,
-matricula INT,
-nome_prof TEXT NOT NULL
-eixo TEXT NOT NULL,
+  matricula_prof INTEGER PRIMARY KEY,
+  matricula INT,
+  nome_prof TEXT NOT NULL
+  eixo TEXT NOT NULL,
 	CONSTRAINT fk_alunos
 	FOREIGN KEY (matricula)
     REFERENCES alunos(matricula)
     );
     
-    -- OPÇÃO 2: A TABELA JÁ FOI CRIADA:
+-- OPÇÃO 2: A TABELA JÁ FOI CRIADA:
     ALTER TABLE alunos
     ADD CONSTRAINT fk_professores
     FOREIGN KEY (matricula_prof)
     REFERENCES professores(matricula_prof);
     
-    -- modificando tabelas que já foram criadas no geral:
+-- modificando tabelas que já foram criadas no geral:
     ALTER TABLE alunos
     ADD email_contato VARCHAR (50);
     
-    -- comandos de exclusão:
+-- comandos de exclusão:
     DROP TABLE alunos;
-    DROP DATABASE pipoquinha
+    DROP DATABASE Gabriel;
     
 -- Atividade para avaliar na semana que vem: Criem mais uma tabela que possa ter relação com  'alunos'
--- e 'professores', fazendo pelo menos a construção com 7 atributos e 7 injeções. Não esqueça de 
+-- e 'professores', fazendo pelo menos a construção com 7 atributos e injeções. Não esqueça de
 -- que todas precisam estar relacionadas.
-
